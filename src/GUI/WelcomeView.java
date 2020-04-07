@@ -8,7 +8,7 @@ public class WelcomeView {
     public Parent getView(){
         BorderPane borderPane = new BorderPane();
 
-        Label welcomeMessage = new Label("Welcome to the NetflixStatistix Application of Sammy, Sylvester and Thirza");
+        Label welcomeMessage = new Label("Welcome to the NetflixStatistix Application of Thirza van Hemert");
 
         borderPane.setCenter(welcomeMessage);
 

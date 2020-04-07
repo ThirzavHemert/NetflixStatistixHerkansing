@@ -1,3 +1,4 @@
+import GUI.NetflixGUI;
 import javafx.application.Application;
 
 public class Main {
