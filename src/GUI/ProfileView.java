@@ -12,7 +12,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class ProfileView {
-//    AddProfileView addProfileView = new AddProfileView();
+    AddProfileView addProfileView = new AddProfileView();
 //    AddWatchedProgram addWatchedProgramView = new AddWatchedProgram();
 
     public Parent getView(){
@@ -88,15 +88,15 @@ public class ProfileView {
         wrapper.setBottom(programsWatched);
 
         //Functionality buttons
-//        addProfile.setOnAction((event)->{
-//            Stage addProfileStage = new Stage();
-//            addProfileStage.setHeight(300);
-//            addProfileStage.setWidth(300);
-//            addProfileStage.setTitle("Add Profile");
-//            Scene scene = new Scene(addProfileView.getView());
-//            addProfileStage.setScene(scene);
-//            addProfileStage.show();
-//        });
+        addProfile.setOnAction((event)->{
+            Stage addProfileStage = new Stage();
+            addProfileStage.setHeight(300);
+            addProfileStage.setWidth(300);
+            addProfileStage.setTitle("Add Profile");
+            Scene scene = new Scene(addProfileView.getView());
+            addProfileStage.setScene(scene);
+            addProfileStage.show();
+        });
 //
 //        addWatched.setOnAction((event)->{
 //            Stage addWatchedStage = new Stage();
