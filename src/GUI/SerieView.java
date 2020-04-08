@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class SerieView {
 
-//    AddSeriesView addSeriesView = new AddSeriesView();
+    AddSeriesView addSeriesView = new AddSeriesView();
 
     public Parent getView(){
         //Creating main components
@@ -48,16 +48,16 @@ public class SerieView {
         vBox.getChildren().addAll(viewTitle, serieTable, buttonBox);
 
         //AddSerie functionality
-//        addSerie.setOnAction((event)->{
-//            Stage addSerieStage = new Stage();
-//            addSerieStage.setMinHeight(300);
-//            addSerieStage.setMinWidth(300);
-//            addSerieStage.setTitle("Add Series");
-//
-//            Scene scene = new Scene(addSeriesView.getView());
-//            addSerieStage.setScene(scene);
-//            addSerieStage.show();
-//        });
+        addSerie.setOnAction((event)->{
+            Stage addSerieStage = new Stage();
+            addSerieStage.setMinHeight(300);
+            addSerieStage.setMinWidth(300);
+            addSerieStage.setTitle("Add Series");
+
+            Scene scene = new Scene(addSeriesView.getView());
+            addSerieStage.setScene(scene);
+            addSerieStage.show();
+        });
 
         return vBox;
     }
