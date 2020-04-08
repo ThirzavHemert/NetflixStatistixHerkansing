@@ -14,7 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class AccountView {
-//    AddAccountView addAccountView = new AddAccountView();
+    AddAccountView addAccountView = new AddAccountView();
 //    EditAccountView editAccountView = new EditAccountView();
 
     public Parent getView(){
@@ -53,15 +53,15 @@ public class AccountView {
         //Adding components to BorderPane
         vBox.getChildren().addAll(title, tableView,buttonBox);
 
-//        addAccount.setOnAction((event)->{
-//            Stage addAccountStage = new Stage();
-//            addAccountStage.setMinWidth(300);
-//            addAccountStage.setMinHeight(300);
-//            addAccountStage.setTitle("Add Account");
-//            Scene scene = new Scene(addAccountView.getView());
-//            addAccountStage.setScene(scene);
-//            addAccountStage.show();
-//        });
+        addAccount.setOnAction((event)->{
+            Stage addAccountStage = new Stage();
+            addAccountStage.setMinWidth(300);
+            addAccountStage.setMinHeight(300);
+            addAccountStage.setTitle("Add Account");
+            Scene scene = new Scene(addAccountView.getView());
+            addAccountStage.setScene(scene);
+            addAccountStage.show();
+        });
 //
 //        editAccount.setOnAction((event)->{
 //            Stage editAccountStage = new Stage();
