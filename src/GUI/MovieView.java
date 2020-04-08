@@ -14,7 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class MovieView {
-//    AddMovieView addMovieView = new AddMovieView();
+    AddMovieView addMovieView = new AddMovieView();
 
     public Parent getView(){
         //Creating Main components
@@ -49,16 +49,16 @@ public class MovieView {
         vBox.getChildren().addAll(viewTitle, movieTable, buttonBox);
 
         //AddMovie Button functionality
-//        addMovie.setOnAction((event)->{
-//            Stage addMovieStage = new Stage();
-//            addMovieStage.setMinHeight(300);
-//            addMovieStage.setMinWidth(300);
-//            addMovieStage.setTitle("Add Movie");
-//
-//            Scene scene = new Scene(addMovieView.getView());
-//            addMovieStage.setScene(scene);
-//            addMovieStage.show();
-//        });
+        addMovie.setOnAction((event)->{
+            Stage addMovieStage = new Stage();
+            addMovieStage.setMinHeight(300);
+            addMovieStage.setMinWidth(300);
+            addMovieStage.setTitle("Add Movie");
+
+            Scene scene = new Scene(addMovieView.getView());
+            addMovieStage.setScene(scene);
+            addMovieStage.show();
+        });
 
         return vBox;
     }
