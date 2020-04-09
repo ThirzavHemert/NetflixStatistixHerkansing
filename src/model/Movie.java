@@ -1,6 +1,6 @@
 package model;
 
-public class Movie extends Video{
+public class Movie extends Program{
 
     private String language;
     private String genre;

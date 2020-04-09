@@ -1,6 +1,6 @@
 package model;
 
-public class Episode extends Video{
+public class Episode extends Program{
 
     private int season;
 

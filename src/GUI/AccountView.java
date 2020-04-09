@@ -67,7 +67,7 @@ public class AccountView {
         System.out.println(AccountDAO.getInstance().getAllAccounts().size());
         tableView.setItems(AccountDAO.getInstance().getAllAccounts());
         tableView.getColumns().addAll(idCol, nameCol, streetCol, houseNrCol, zipCodeCol, cityCol);
-        
+
 
         //Creating buttons and add them to buttonBox
         Button addAccount = new Button("Add");
