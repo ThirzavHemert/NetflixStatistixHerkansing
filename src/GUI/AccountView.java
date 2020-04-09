@@ -68,41 +68,7 @@ public class AccountView {
         tableView.setItems(AccountDAO.getInstance().getAllAccounts());
         tableView.getColumns().addAll(idCol, nameCol, streetCol, houseNrCol, zipCodeCol, cityCol);
 
-
-
-
-
-
-//        id.setCellValueFactory(c -> new SimpleIntegerProperty(new Integer(0)));
-//        name.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
-//        street.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
-//        houseNr.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
-//        zipCode.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
-//        city.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
-
-//        ArrayList<Account> data = AccountDAO.getInstance().getAllAccounts();
-//        ObservableList<Account> row = FXCollections.observableArrayList();
-//        for(Account a: data){
-//            row.add(a);
-//        }
-
-//        try {
-//            for (Account a : AccountDAO.getInstance().getAllAccounts()) {
-//                Object[] o = new Object[6];
-//                o[0] = a.getAccountID();
-//                o[1] = a.getAccountName();
-//                o[2] = a.getStreetName();
-//                o[3] = a.getHouseNr();
-//                o[4] = a.getZipCode();
-//                o[5] = a.getResidence();
-//                tableView.setItems(AccountDAO.getInstance().getAllAccounts());
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-
-
-
+        
 
         //Creating buttons and add them to buttonBox
         Button addAccount = new Button("Add");
