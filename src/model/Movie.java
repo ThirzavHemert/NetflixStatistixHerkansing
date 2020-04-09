@@ -4,9 +4,9 @@ public class Movie extends Program{
 
     private String language;
     private String genre;
-    private int ageIndication;
+    private String ageIndication;
 
-    public Movie(int id, String title, String duration, String genre, String language, int ageIndication){
+    public Movie(int id, String title, String duration, String genre, String language, String ageIndication){
         super(id, title, duration);
         this.genre = genre;
         this.language = language;
@@ -29,11 +29,11 @@ public class Movie extends Program{
         this.genre = genre;
     }
 
-    public int getAgeIndication() {
+    public String getAgeIndication() {
         return ageIndication;
     }
 
-    public void setAgeIndication(int ageIndication) {
+    public void setAgeIndication(String ageIndication) {
         this.ageIndication = ageIndication;
     }
 }
