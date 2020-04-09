@@ -1,5 +1,10 @@
 package GUI;
 
+import Database.DAO.AccountDAO;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -7,35 +12,97 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import model.Account;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountView {
     AddAccountView addAccountView = new AddAccountView();
+
 //    EditAccountView editAccountView = new EditAccountView();
 
     public Parent getView(){
         //Creating main components
         VBox vBox = new VBox();
-        TableView tableView = new TableView();
+        TableView<Account> tableView;
         HBox buttonBox = new HBox();
 
         //Creating title node
         Label title = new Label("Accounts Overview");
 
         //Creating table columns
-        TableColumn id = new TableColumn("ID");
-        TableColumn name = new TableColumn("Name");
-        TableColumn street = new TableColumn("Street");
-        TableColumn houseNr = new TableColumn("HouseNr");
-        TableColumn zipCode = new TableColumn("ZipCode");
-        TableColumn city = new TableColumn("City");
 
-        tableView.getColumns().addAll(id, name, street, houseNr, zipCode, city);
-        tableView.setMaxSize(600,300);
+        TableColumn<Account, Integer> idCol = new TableColumn<>("ID");
+        idCol.setMinWidth(50);
+        idCol.setCellValueFactory(new PropertyValueFactory<>("accountID"));
+
+        TableColumn<Account, String> nameCol = new TableColumn<>("Name");
+        nameCol.setMinWidth(50);
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("accountName"));
+
+        TableColumn<Account, String> streetCol = new TableColumn<>("Street");
+        streetCol.setMinWidth(50);
+        streetCol.setCellValueFactory(new PropertyValueFactory<>("streetName"));
+
+        TableColumn<Account, String> houseNrCol = new TableColumn<>("HouseNr");
+        houseNrCol.setMinWidth(50);
+        houseNrCol.setCellValueFactory(new PropertyValueFactory<>("houseNr"));
+
+        TableColumn<Account, String> zipCodeCol = new TableColumn<>("ZipCode");
+        zipCodeCol.setMinWidth(50);
+        zipCodeCol.setCellValueFactory(new PropertyValueFactory<>("zipCode"));
+
+        TableColumn<Account, String> cityCol = new TableColumn<>("Residence");
+        cityCol.setMinWidth(50);
+        cityCol.setCellValueFactory(new PropertyValueFactory<>("residence"));
+
+        tableView = new TableView<>();
+        System.out.println(AccountDAO.getInstance().getAllAccounts().size());
+        tableView.setItems(AccountDAO.getInstance().getAllAccounts());
+        tableView.getColumns().addAll(idCol, nameCol, streetCol, houseNrCol, zipCodeCol, cityCol);
+
+
+
+
+
+
+//        id.setCellValueFactory(c -> new SimpleIntegerProperty(new Integer(0)));
+//        name.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
+//        street.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
+//        houseNr.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
+//        zipCode.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
+//        city.setCellValueFactory(c -> new SimpleStringProperty(("Hi")));
+
+//        ArrayList<Account> data = AccountDAO.getInstance().getAllAccounts();
+//        ObservableList<Account> row = FXCollections.observableArrayList();
+//        for(Account a: data){
+//            row.add(a);
+//        }
+
+//        try {
+//            for (Account a : AccountDAO.getInstance().getAllAccounts()) {
+//                Object[] o = new Object[6];
+//                o[0] = a.getAccountID();
+//                o[1] = a.getAccountName();
+//                o[2] = a.getStreetName();
+//                o[3] = a.getHouseNr();
+//                o[4] = a.getZipCode();
+//                o[5] = a.getResidence();
+//                tableView.setItems(AccountDAO.getInstance().getAllAccounts());
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+
+
 
         //Creating buttons and add them to buttonBox
         Button addAccount = new Button("Add");
