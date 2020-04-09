@@ -64,7 +64,6 @@ public class AccountView {
         cityCol.setCellValueFactory(new PropertyValueFactory<>("residence"));
 
         tableView = new TableView<>();
-        System.out.println(AccountDAO.getInstance().getAllAccounts().size());
         tableView.setItems(AccountDAO.getInstance().getAllAccounts());
         tableView.getColumns().addAll(idCol, nameCol, streetCol, houseNrCol, zipCodeCol, cityCol);
 
