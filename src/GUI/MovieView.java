@@ -29,16 +29,7 @@ public class MovieView {
         Label viewTitle = new Label("Movie Overview");
 
         //Creating table columns
-//        TableColumn id = new TableColumn("ID");
-//        TableColumn title = new TableColumn("Title");
-//        TableColumn duration = new TableColumn("Duration");
-//        TableColumn genre = new TableColumn("Genre");
-//        TableColumn language = new TableColumn("Language");
-//        TableColumn age = new TableColumn("Age");
-//
-//        movieTable.getColumns().addAll(id, title, duration, genre, language, age);
-//        movieTable.setMaxSize(600,300);
-
+        
         TableColumn<Movie, Integer> idCol = new TableColumn<>("ID");
         idCol.setMinWidth(50);
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
